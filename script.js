@@ -27,7 +27,7 @@ const products = [
     name: "Trophée 3 - Mention Très Bien",
     description: "Trophée spécial pour mention Très Bien au BAC ou BEM",
     price: "2500 dzd",
-    image: "images/img3.jpg",
+    image: "img3.jpg",
   },
   {
     id: "004",
@@ -35,7 +35,7 @@ const products = [
     name: "Trophée 4 - Mérite Scolaire",
     description: "Trophée de reconnaissance pour excellence scolaire générale",
     price: "2500 dzd",
-    image: "images/img4.jpg",
+    image: "img4.jpg",
   },
   {
     id: "005",
@@ -43,7 +43,7 @@ const products = [
     name: "Trophée 5 - Persévérance",
     description: "Trophée pour récompenser l'effort et la persévérance scolaire",
     price: "2500 dzd",
-    image: "images/img5.jpg",
+    image: "img5.jpg",
   },
   {
     id: "006",
@@ -51,7 +51,7 @@ const products = [
     name: "Trophée 6 - Diplômé",
     description: "Trophée universel pour toute réussite de diplôme",
     price: "2500 dzd",
-    image: "images/img6.jpg",
+    image: "img6.jpg",
   },
 ]
 
