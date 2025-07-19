@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michket - Trophées de Félicitation BAC & BEM</title>
+    <title>Michket - Lampes Veilleuses de Félicitation BAC & BEM</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -14,14 +14,19 @@
         <div class="container">
             <div class="nav">
                 <div class="logo">
-                     <img src="images/logo.png" alt="Michket" style="height: 40px;">
+                    <img src="images/logo.png" alt="Michket" style="height: 40px;">
                     <span>Michket</span>
                 </div>
                 <nav class="nav-links">
-                    <a href="#products">Trophées</a>
+                    <a href="#products">Lampes</a>
                     <a href="#reviews">Avis</a>
                     <a href="#faq">FAQ</a>
                     <a href="#order-form">Commander</a>
+                    <!-- NOUVEAU LIEN -->
+                    <a href="trophees.html" class="nav-link-special">
+                        <i class="fas fa-trophy"></i>
+                        Trophées
+                    </a>
                 </nav>
             </div>
         </div>
@@ -30,13 +35,13 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Félicitez vos <span class="highlight">Réussites Scolaires</span></h1>
-            <p>Trophées de félicitation personnalisés pour le BAC, BEM et toutes réussites scolaires. Gravure incluse !</p>
+            <h1>Illuminez vos <span class="highlight">Réussites Scolaires</span></h1>
+            <p>Lampes veilleuses LED personnalisées pour célébrer le BAC, BEM et toutes réussites scolaires. Gravure lumineuse incluse !</p>
             
             <div class="features">
                 <div class="feature">
-                    <i class="fas fa-medal"></i>
-                    <h3>Gravure Personnalisée</h3>
+                    <i class="fas fa-magic"></i>
+                    <h3>Gravure Lumineuse</h3>
                 </div>
                 <div class="feature">
                     <i class="fas fa-truck"></i>
@@ -48,24 +53,117 @@
                 </div>
             </div>
 
-            <button class="cta-btn" onclick="scrollToSection('products')">
-                Voir nos trophées
-            </button>
+            <div class="hero-buttons">
+                <button class="cta-btn" onclick="scrollToSection('products')">
+                    Voir nos lampes
+                </button>
+                <!-- NOUVEAU BOUTON -->
+                <a href="trophees.html" class="cta-btn-secondary">
+                    <i class="fas fa-trophy"></i>
+                    Voir nos trophées
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Products Section -->
     <section id="products" class="products">
         <div class="container">
-            <h2>Nos Trophées de Félicitation</h2>
-            <p>Cliquez sur l'image d'un trophée pour le sélectionner et le personnaliser</p>
+            <h2>Nos Lampes Veilleuses de Félicitation</h2>
+            <p>Cliquez sur l'image d'une lampe pour la sélectionner et la personnaliser</p>
             
             <div class="products-grid" id="productsGrid">
-                <!-- Les trophées seront générés par JavaScript -->
+                <!-- Les lampes seront générées par JavaScript -->
+            </div>
+             <section id="order-form" class="order-form">
+                <div class="container">
+            <h2>Passer votre commande</h2>
+            <p>Remplissez vos informations pour recevoir votre lampe personnalisée</p>
+         <!-- Order Form -->
+                <div class="form-wrapper">
+                    <form id="orderForm" class="order-form-fields">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nom">Nom *</label>
+                                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="prenom">Prénom *</label>
+                                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telephone">Téléphone *</label>
+                            <input type="tel" id="telephone" name="telephone" placeholder="0123 45 67 89" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="produit">Choix de la lampe *</label>
+                            <input type="text" id="produit" name="produit" placeholder="Cliquez sur une lampe ci-dessus" readonly required>
+                            <p class="form-help" id="productHelp">Veuillez sélectionner une lampe en cliquant sur son image</p>
+                        </div>
+
+                        <!-- Champs Quantité et Personnalisation -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="quantite">Quantité *</label>
+                                <select id="quantite" name="quantite" required>
+                                    <option value="">Choisir la quantité</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="plus">Plus de 10 (préciser dans personnalisation)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="personalisation">Personnalisation *</label>
+                                <input type="text" id="personalisation" name="personalisation" placeholder="Ex: Nom, couleur LED, mention..." required>
+                                <p class="form-help">Gravure lumineuse incluse - Précisez le texte et couleur LED</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="adresse">Adresse de livraison *</label>
+                            <textarea id="adresse" name="adresse" placeholder="Votre adresse complète avec wilaya" rows="3" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn" disabled>
+                            <i class="fas fa-lightbulb"></i>
+                            Commander ma lampe
+                        </button>
+
+                        <div id="submitMessage" class="submit-message"></div>
+                    </form>
+                </div>
+            </div>
+            </section>
+
+            <!-- NOUVEAU LIEN VERS TROPHÉES -->
+            <div class="products-link-section">
+                <div class="link-card">
+                    <div class="link-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Vous préférez les trophées ?</h3>
+                    <p>Découvrez notre collection de trophées de félicitation pour BAC et BEM</p>
+                    <a href="trophees.html" class="link-btn">
+                        <i class="fas fa-arrow-right"></i>
+                        Voir plus de trophées
+                    </a>
+                </div>
             </div>
         </div>
     </section>
-
+   
+        
     <!-- Reviews Section -->
     <section id="reviews" class="reviews">
         <div class="container">
@@ -81,10 +179,10 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Livraison ultra rapide ! Mon fils a reçu son trophée BAC le lendemain. Gravure parfaite et professionnelle !"</p>
+                    <p>"Magnifique ! La lampe BAC de mon fils illumine sa chambre avec son nom gravé. Livraison ultra rapide !"</p>
                     <div class="reviewer">
                         <strong>Fatima B.</strong>
-                        <span>Trophée Excellence BAC</span>
+                        <span>Lampe Excellence BAC</span>
                     </div>
                 </div>
                 
@@ -96,10 +194,10 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Service client exceptionnel ! Ils ont personnalisé le trophée BEM de ma fille avec soin. Très professionnel !"</p>
+                    <p>"Qualité LED exceptionnelle ! La gravure lumineuse BEM est parfaite. Service client très professionnel !"</p>
                     <div class="reviewer">
                         <strong>Mohamed K.</strong>
-                        <span>Trophée Réussite BEM</span>
+                        <span>Lampe Réussite BEM</span>
                     </div>
                 </div>
                 
@@ -111,10 +209,10 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Qualité remarquable ! Le trophée Mention Très Bien est magnifique. Michket est devenu notre référence !"</p>
+                    <p>"Effet lumineux magique ! Ma fille adore sa lampe Mention Très Bien. Michket est notre référence !"</p>
                     <div class="reviewer">
                         <strong>Aicha L.</strong>
-                        <span>Trophée Mention Très Bien</span>
+                        <span>Lampe Mention Très Bien</span>
                     </div>
                 </div>
 
@@ -126,10 +224,10 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Emballage soigné, livraison en 24h comme promis. Ma fille était émue de recevoir son trophée personnalisé !"</p>
+                    <p>"Emballage soigné, livraison 24h respectée. La lampe personnalisée a fait pleurer ma fille de joie !"</p>
                     <div class="reviewer">
                         <strong>Karim M.</strong>
-                        <span>Trophée Persévérance</span>
+                        <span>Lampe Persévérance</span>
                     </div>
                 </div>
 
@@ -141,10 +239,10 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Excellent rapport qualité-prix ! Service après-vente réactif. Je recommande vivement Michket !"</p>
+                    <p>"Rapport qualité-prix imbattable ! LED durable, gravure nette. Service après-vente au top !"</p>
                     <div class="reviewer">
                         <strong>Samira D.</strong>
-                        <span>Trophée Mérite Scolaire</span>
+                        <span>Lampe Mérite Scolaire</span>
                     </div>
                 </div>
 
@@ -156,15 +254,17 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Professionnalisme exemplaire ! Ils ont respecté tous mes souhaits de personnalisation. Bravo !"</p>
+                    <p>"Professionnalisme exemplaire ! Ils ont respecté tous mes souhaits de couleurs LED. Bravo !"</p>
                     <div class="reviewer">
                         <strong>Youssef A.</strong>
-                        <span>Trophée Diplômé</span>
+                        <span>Lampe Diplômé</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    
 
     <!-- FAQ Section -->
     <section id="faq" class="faq">
@@ -191,18 +291,29 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Paiement à la livraison (cash), Aucun paiement en ligne requis.</p>
+                        <p>Paiement à la livraison (cash), virement bancaire, ou paiement mobile (CCP, Barid Bank). Aucun paiement en ligne requis.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <i class="fas fa-edit"></i>
-                        <h3>Comment personnaliser mon trophée ?</h3>
+                        <i class="fas fa-palette"></i>
+                        <h3>Comment personnaliser ma lampe ?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Utilisez le champ "Personnalisation" dans le formulaire. Indiquez : nom, prénom, mention, date, message spécial. Gravure incluse dans le prix !</p>
+                        <p>Utilisez le champ "Personnalisation" : nom, prénom, mention, date, couleur LED (blanc, bleu, rouge, vert, multicolore). Gravure lumineuse incluse !</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-plug"></i>
+                        <h3>Comment fonctionne la lampe ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Alimentation USB (câble inclus) ou 3 piles AA. LED longue durée 50,000h. Bouton tactile pour allumer/éteindre et changer les couleurs.</p>
                     </div>
                 </div>
 
@@ -224,7 +335,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Échange possible sous 7 jours si défaut de fabrication. Retour accepté uniquement si erreur de notre part. Trophées personnalisés non échangeables sauf défaut.</p>
+                        <p>Échange possible sous 7 jours si défaut technique. Retour accepté uniquement si erreur de notre part. Lampes personnalisées non échangeables sauf défaut.</p>
                     </div>
                 </div>
 
@@ -235,7 +346,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Garantie qualité 1 an contre tout défaut de fabrication. Gravure garantie à vie. Remplacement gratuit en cas de problème avéré.</p>
+                        <p>Garantie LED 2 ans contre tout défaut technique. Gravure garantie à vie. Remplacement gratuit en cas de problème avéré.</p>
                     </div>
                 </div>
 
@@ -246,7 +357,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Oui ! Livraison dans les 58 wilayas. Emballage sécurisé garanti.</p>
+                        <p>Oui ! Livraison dans les 48 wilayas. Frais de port offerts à partir de 2 lampes. Emballage anti-choc garanti.</p>
                     </div>
                 </div>
 
@@ -257,86 +368,22 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Remises spéciales pour écoles, lycées et commandes de +10 trophées. Contactez-nous pour un devis personnalisé.</p>
+                        <p>Remises spéciales pour écoles, lycées et commandes de +10 lampes. Contactez-nous pour un devis personnalisé.</p>
                     </div>
                 </div>
             </div>
+
+            
         </div>
     </section>
 
     <!-- Order Form Section -->
     <section id="order-form" class="order-form">
-        <div class="container">
-            <h2>Passer votre commande</h2>
-            <p>Remplissez vos informations pour recevoir votre trophée personnalisé</p>
+             <div class="container">
+            <h2>Contact us</h2>
+            <p>pour toutes vos questions, pour plus d´informations contactez nous </p>
             
-          
-
-                <!-- Order Form -->
-                <div class="form-wrapper">
-                    <form id="orderForm" class="order-form-fields">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="nom">Nom *</label>
-                                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="prenom">Prénom *</label>
-                                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="telephone">Téléphone *</label>
-                            <input type="tel" id="telephone" name="telephone" placeholder="0123 45 67 89" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="produit">Choix du trophée *</label>
-                            <input type="text" id="produit" name="produit" placeholder="Cliquez sur un trophée ci-dessus" readonly required>
-                            <p class="form-help" id="productHelp">Veuillez sélectionner un trophée en cliquant sur son image</p>
-                        </div>
-
-                        <!-- Champs Quantité et Personnalisation -->
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="quantite">Quantité *</label>
-                                <select id="quantite" name="quantite" required>
-                                    <option value="">Choisir la quantité</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="plus">Plus de 10 (préciser dans personnalisation)</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="personalisation">Personnalisation *</label>
-                                <input type="text" id="personalisation" name="personalisation" placeholder="Ex: Nom, prénom, mention, date..." required>
-                                <p class="form-help">Gravure incluse - Précisez le texte souhaité</p>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="adresse">Adresse de livraison *</label>
-                            <textarea id="adresse" name="adresse" placeholder="Votre adresse complète avec wilaya" rows="3" required></textarea>
-                        </div>
-
-                        <button type="submit" class="submit-btn" id="submitBtn" disabled>
-                            <i class="fas fa-trophy"></i>
-                            Commander mon trophée
-                        </button>
-
-                        <div id="submitMessage" class="submit-message"></div>
-                    </form>
-                </div>
-              <div class="form-container">
+            <div class="form-container">
                 <!-- Contact Info -->
                 <div class="contact-info">
                     <h3>Nos coordonnées</h3>
@@ -352,26 +399,33 @@
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <span>michketstore@michket.tech</span>
+                        <span>commandes@michket.dz</span>
                     </div>
                     
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <span>Draria, Alger, Algérie</span>
+                        <span>Alger Centre, Algérie</span>
                     </div>
 
                     <!-- WhatsApp Button -->
                     <div class="whatsapp-section">
                         <h4>Besoin d'aide ?</h4>
-                        <a href="https://wa.me/213770977803?text=Bonjour%20Michket,%20j'ai%20besoin%20d'aide%20pour%20ma%20commande%20de%20trophée" 
+                        <a href="https://wa.me/213770977803?text=Bonjour%20Michket,%20j'ai%20besoin%20d'aide%20pour%20ma%20commande%20de%20lampe" 
                            target="_blank" class="whatsapp-btn">
                             <i class="fab fa-whatsapp"></i>
                             Contactez-nous sur WhatsApp
                         </a>
                     </div>
                 </div>
+ <!-- Bloc image + texte -->
+  <div class="carte">
+    <p class="text-2xl font-bold text-gray-800 mb-4"> Nous proposons aussi des cartes du monde personnalisées </p>
+    <img src="images/map.jpg" alt="Carte du monde personnalisée"
+     class="w-full md:w-1/2 p-6 text-center">
+  </div>
+              
             </div>
         </div>
     </section>
@@ -381,18 +435,22 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                      <img src="images/logo.png" alt="Michket" style="height: 40px;">
+                    <img src="images/logo.png" alt="Michket" style="height: 40px;">
                     <span>Michket</span>
                 </div>
-                <p>Spécialiste des trophées de félicitation scolaire</p>
+                <p>Spécialiste des lampes veilleuses de félicitation scolaire</p>
                 <p>&copy; 2024 Michket. Tous droits réservés.</p>
+                <!-- NOUVEAU LIEN FOOTER -->
+                <div class="footer-links">
+                    <a href="trophees.html">Voir nos trophées</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Floating Button -->
     <div class="whatsapp-float">
-        <a href="https://wa.me/213770977803?text=Bonjour%20Michket,%20j'aimerais%20avoir%20des%20informations%20sur%20vos%20trophées" 
+        <a href="https://wa.me/213770977803?text=Bonjour%20Michket,%20j'aimerais%20avoir%20des%20informations%20sur%20vos%20lampes" 
            target="_blank" class="whatsapp-float-btn">
             <i class="fab fa-whatsapp"></i>
         </a>

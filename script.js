@@ -1,57 +1,55 @@
 // Configuration
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby_aLqxY0ceJ92E05keBGDf3--SZjwvA2t-XwtEHKiBU9IN6yt1uQwNFs74lkIBa5dr/exec"
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby0OLD9lknTcyhjJzUx1o6u4bWk8ZDI7WU4-N9-t0cvOntPg49kmF1ld45v04lae_TQsA/exec"
 
-
-// Remplacer les données des produits par des trophées :
-
+// Données des lampes veilleuses :
 const products = [
   {
-    id: "001",
+
     hiddenId: "001",
-    name: "Trophée 1 - Excellence BAC",
-    description: "Trophée de félicitation pour réussite au Baccalauréat avec gravure personnalisée",
-    price: "2500 dzd",
-    image: "images/img1.jpg",
+    name: "Lampe 1 - Excellence BAC",
+    description: "Lampe veilleuse LED personnalisée pour féliciter la réussite au Baccalauréat",
+    price: "3000 dzd",
+    image: "images/trophy3.jpg",
   },
   {
-    id: "002",
+    
     hiddenId: "002",
-    name: "Trophée 2 - Réussite BEM",
-    description: "Trophée de félicitation pour obtention du Brevet d'Enseignement Moyen",
-    price: "2500 dzd",
-    image: "images/img2.jpg",
+    name: "Lampe 2 - Réussite BEM",
+    description: "Veilleuse LED gravée pour célébrer l'obtention du Brevet d'Enseignement Moyen",
+    price: "3000 dzd",
+    image: "images/trophy2.jpg",
   },
   {
-    id: "003",
+    
     hiddenId: "003",
-    name: "Trophée 3 - Mention Très Bien",
-    description: "Trophée spécial pour mention Très Bien au BAC ou BEM",
-    price: "2500 dzd",
-    image: "images/img3.jpg",
+    name: "Lampe 3 - Mention Très Bien",
+    description: "Lampe LED spéciale avec gravure lumineuse pour mention Très Bien",
+    price: "3000 dzd",
+    image: "images/trophy1.jpg",
   },
   {
-    id: "004",
+   
     hiddenId: "004",
-    name: "Trophée 4 - Mérite Scolaire",
-    description: "Trophée de reconnaissance pour excellence scolaire générale",
-    price: "2500 dzd",
-    image: "images/img4.jpg",
+    name: "Lampe 4 - Mérite Scolaire",
+    description: "Veilleuse de reconnaissance pour excellence scolaire générale",
+    price: "3000 dzd",
+    image: "images/trophy4.jpg",
   },
   {
-    id: "005",
+    
     hiddenId: "005",
-    name: "Trophée 5 - Persévérance",
-    description: "Trophée pour récompenser l'effort et la persévérance scolaire",
-    price: "2500 dzd",
-    image: "images/img5.jpg",
+    name: "Lampe 5 - Persévérance",
+    description: "Lampe LED pour récompenser l'effort et la persévérance scolaire",
+    price: "3000 dzd",
+    image: "images/trophy5.jpg",
   },
   {
-    id: "006",
+   
     hiddenId: "006",
-    name: "Trophée 6 - Diplômé",
-    description: "Trophée universel pour toute réussite de diplôme",
-    price: "2500 dzd",
-    image: "images/img6.jpg",
+    name: "Lampe 6 - Diplômé",
+    description: "Veilleuse universelle pour toute réussite de diplôme avec éclairage multicolore",
+    price: "3000 dzd",
+    image: "images/trophy6.jpg",
   },
 ]
 
@@ -63,7 +61,7 @@ let selectedProductId = ""
 document.addEventListener("DOMContentLoaded", () => {
   generateProducts()
   setupEventListeners()
-  setupFAQ() // AJOUTER cette ligne
+  setupFAQ()
 })
 
 // Générer les produits
@@ -78,7 +76,7 @@ function generateProducts() {
     productCard.innerHTML = `
             <div class="product-image">
                 <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x200/fbbf24/000000?text=${encodeURIComponent(product.name)}'">
-                <div class="product-badge">ID: ${product.id}</div>
+                
                 <div class="selected-overlay">
                     <div class="selected-badge">✓ Sélectionné</div>
                 </div>
@@ -126,15 +124,13 @@ function setupEventListeners() {
 
   inputs.forEach((input) => {
     input.addEventListener("input", updateSubmitButton)
-    input.addEventListener("change", updateSubmitButton) // Pour les select
+    input.addEventListener("change", updateSubmitButton)
   })
 
   form.addEventListener("submit", handleSubmit)
 }
 
-// Ajouter la fonctionnalité FAQ après la fonction setupEventListeners
-
-// Ajouter cette fonction après setupEventListeners() :
+// Fonctionnalité FAQ
 function setupFAQ() {
   const faqItems = document.querySelectorAll(".faq-item")
 
@@ -155,7 +151,7 @@ function setupFAQ() {
   })
 }
 
-// Modifier le champ personnalisation pour qu'il soit requis dans updateSubmitButton :
+// Mettre à jour le bouton de soumission
 function updateSubmitButton() {
   const form = document.getElementById("orderForm")
   const submitBtn = document.getElementById("submitBtn")
@@ -163,7 +159,7 @@ function updateSubmitButton() {
 
   let isValid = true
 
-  // Vérifier tous les champs requis (personnalisation maintenant requis)
+  // Vérifier tous les champs requis
   const requiredFields = ["nom", "prenom", "telephone", "produit", "quantite", "personalisation", "adresse"]
 
   for (const field of requiredFields) {
@@ -194,7 +190,7 @@ function handleSubmit(e) {
   submitBtn.disabled = true
   submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...'
 
-  // Préparer les données (AVEC les nouveaux champs)
+  // Préparer les données
   const formData = new FormData(form)
   const data = {
     nom: formData.get("nom"),
@@ -202,8 +198,8 @@ function handleSubmit(e) {
     telephone: formData.get("telephone"),
     produit: formData.get("produit"),
     produitId: selectedProductId,
-    quantite: formData.get("quantite"), // NOUVEAU
-    personalisation: formData.get("personalisation") || "Aucune", // NOUVEAU
+    quantite: formData.get("quantite"),
+    personalisation: formData.get("personalisation") || "Aucune",
     adresse: formData.get("adresse"),
     timestamp: new Date().toISOString(),
   }
@@ -248,7 +244,7 @@ function handleSubmit(e) {
 
     // Réactiver le bouton
     submitBtn.disabled = false
-    submitBtn.innerHTML = '<i class="fas fa-shopping-cart"></i> Passer votre commande'
+    submitBtn.innerHTML = '<i class="fas fa-lightbulb"></i> Commander ma lampe'
     updateSubmitButton()
   }
 
